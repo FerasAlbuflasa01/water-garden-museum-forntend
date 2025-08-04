@@ -39,17 +39,17 @@ once signed in as an admin, you'll be redirected to the admin dashboard where yo
 
 The project is currently under development and will be deployed soon.
 
-You can track the development progress through the GitHub repository [here](https://github.com/FerasAlbuflasa01/cinema-website).
+You can track the development progress through the GitHub repository [here]().
 
 ---
 
 ### **_Project Preview_**
 
-- All project screenshots and visual references can be viewed [here](https://drive.google.com/file/d/1jH3iORZ3LbZDXxyJwevK8hZ0L3YHkoAa/view)
+- All project screenshots and visual references can be viewed [here]()
 
-- To tarck our project at trello [here](https://trello.com/b/cEx1qjnE/cinegate)
+- To tarck our project at trello [here]()
 
-- ERD ![ERD](https://i.imgur.com/58hoEYr.jpeg)
+- ERD ![ERD]()
 
 ---
 
