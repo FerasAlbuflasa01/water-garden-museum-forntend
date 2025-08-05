@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import SignIn from './components/SignIn'
 import Home from './components/Home'
 import About from './components/About'
-import ViewGames from './components/ViewGames'
+import ViewGames from './components/ViewDetails'
 import New from './components/New'
 import { useEffect, useState } from 'react'
 import Client, { BASE_URL } from './services/api'
@@ -23,13 +23,18 @@ const App = () => {
   }, [])
 
   return (
+    
     <Routes>
       <Route path="/sign-in" element={<SignIn setAdmin={setAdmin} />} />
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/view/games" element={<ViewGames />} />
       <Route path="/new/games" element={<New />} />
+
     </Routes>
+
+    
+
   )
 }
 
