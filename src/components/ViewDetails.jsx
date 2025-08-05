@@ -1,16 +1,13 @@
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import { NewGame } from '../services/NewGame'
 
 const ViewDetails = ({ game }) => {
    
     return (
         <form className="details" >
-            <img src="https://media.alwasatnews.com/data/2016/5096/images/loc-8.jpg" alt="game.image" className="game-image" />
+            <img src={ game.img } alt={game.name} className="game-image" />
              {/* image is an example */}
-            <h2 name={'game.name'} >Name</h2>
-            <h3 name={'game.price'}>Price</h3>
-            <p name={'game.discreption'}>Discreption</p>
+            <h2 name={'game.name'} >{game.name}</h2>
+            <h3 name={'game.price'}>{game.price}</h3>
+            <p name={'game.discreption'}>{ game.discription}</p>
         </form>
     )
 }
