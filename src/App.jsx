@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Client, { BASE_URL } from './services/api'
 
-
 import SignIn from './components/SignIn'
 import Home from './components/Home'
 import About from './components/About'
@@ -23,32 +22,24 @@ const App = () => {
   useEffect(() => {
     checkToken()
   }, [])
-
+  const handleLogOut = () => {
+    setUser(null)
+    localStorage.clear()
+  }
   return (
-
     <>
-    
+      <Header handleLogOut={handleLogOut} admin={admin} />
 
-      <Header />
-
-    <main>
-
-    <Routes>
-      <Route path="/sign-in" element={<SignIn setAdmin={setAdmin} />} />
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/game/new" element={<New />} />
-      <Route path="/view/games" element={<ViewDetails />} />
-
-    </Routes>
-
-    </main>
-
-    
+      <main>
+        <Routes>
+          <Route path="/sign-in" element={<SignIn setAdmin={setAdmin} />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/game/new" element={<New />} />
+          <Route path="/view/games" element={<ViewDetails />} />
+        </Routes>
+      </main>
     </>
-    
-
-
   )
 }
 

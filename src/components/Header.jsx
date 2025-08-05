@@ -1,13 +1,20 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from 'react-router-dom'
 
-const Header = () => {
-    return (
+const Header = ({ admin, handleLogOut }) => {
+  let display
+  console.log(admin)
 
-        <header>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="/new/games">Add Item</NavLink>
-    <NavLink to="/about">About</NavLink>
+  return (
+    <header>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/new/games">Add Item</NavLink>
+      <NavLink to="/about">About</NavLink>
+      {admin ? (
+        <Link onClick={handleLogOut} to="/">
+          Sign Out
+        </Link>
+      ) : null}
     </header>
-    )
+  )
 }
 export default Header
