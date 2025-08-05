@@ -25,11 +25,12 @@ const App = () => {
   return (
     
     <Routes>
-      <Route path='/sign-in' element={<SignIn />} />
-      <Route path='/' element={<Home />} />
-      <Route path='/about' element={<About />} />
-      <Route path='/view/games' element={<ViewDetails />} />
-      <Route path='/new/games' element={<New />} />
+      <Route path="/sign-in" element={<SignIn setAdmin={setAdmin} />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/view/games" element={<ViewGames />} />
+      <Route path="/new/games" element={<New />} />
+
     </Routes>
 
     

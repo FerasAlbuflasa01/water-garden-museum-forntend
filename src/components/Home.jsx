@@ -1,4 +1,2 @@
-const Home = () => {
-
-}
+const Home = () => {}
 export default Home
