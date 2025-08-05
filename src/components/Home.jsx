@@ -1,3 +1,4 @@
+
 import GameCard from "./GameCard"
 
 const Home = () => {
@@ -8,3 +9,4 @@ const Home = () => {
     )
 }
 export default Home
+
