@@ -1,13 +1,15 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import Client, { BASE_URL } from './services/api'
+
 
 import SignIn from './components/SignIn'
 import Home from './components/Home'
 import About from './components/About'
 import ViewDetails from './components/ViewDetails'
 import New from './components/New'
-import { useEffect, useState } from 'react'
-import Client, { BASE_URL } from './services/api'
+import Header from './components/Header'
 
 const App = () => {
   const [admin, setAdmin] = useState(null)
@@ -23,6 +25,14 @@ const App = () => {
   }, [])
 
   return (
+
+    <>
+    
+
+      <Header />
+
+    <main>
+
     <Routes>
       <Route path="/sign-in" element={<SignIn setAdmin={setAdmin} />} />
       <Route path="/" element={<Home />} />
@@ -30,6 +40,14 @@ const App = () => {
       <Route path="/view/games" element={<ViewDetails />} />
       <Route path="/new/games" element={<New />} />
     </Routes>
+
+    </main>
+
+    
+    </>
+    
+
+
   )
 }
 

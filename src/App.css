@@ -5,8 +5,23 @@
   text-align: center;
 }
 
+header {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 3em;
+}
+
 .sign-in {
   color: white;
+}
+
+.game-card {
+  border: 5px solid aliceblue;
+  height: 650px;
+  width: 350px;
+  border-radius: 10%;
 }
 
 .game-image{
@@ -16,4 +31,11 @@
   width: 1250px;
   height: 400px;
 
+}
+.game-image2 {
+  display: flex;
+  border: 2px solid aliceblue;
+  height: 400px;
+  width: 100%;
+  border-radius: 10%;
 }
