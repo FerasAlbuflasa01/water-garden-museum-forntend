@@ -1,10 +1,34 @@
 
+import { useEffect, useState } from "react"
 import GameCard from "./GameCard"
+import ViewDetails from "./ViewDetails"
 
 const Home = () => {
+    const [listOfGames, setListOfGames] = useState([])
+    // let { gameId } = useParams()
+
+    useEffect(() => {
+        const getGameDetails = async () => {
+            const response = await axios.get(
+                `http://localhost:3001/games`
+            )
+            setListOfGames(response.data)
+            console.log(response.data)
+        }
+        getGameDetails()
+
+    },[])
+
     return (
         <>
-        <GameCard />
+        {listOfGames.map((game) => (
+        <GameCard game={game}/>
+        ))}
+        {listOfGames.map((game) => (
+        <ViewDetails game={game}/>
+        ))}
+
+        
         </>
     )
 }
