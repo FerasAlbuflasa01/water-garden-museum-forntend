@@ -10,6 +10,7 @@ import New from './components/New'
 const App = () => {
 
   return (
+    
     <Routes>
       <Route path='/sign-in' element={<SignIn />} />
       <Route path='/' element={<Home />} />
@@ -17,6 +18,7 @@ const App = () => {
       <Route path='/view/games' element={<ViewDetails />} />
       <Route path='/new/games' element={<New />} />
     </Routes>
+
   )
 }
 
