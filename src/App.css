@@ -8,3 +8,12 @@
 .sign-in {
   color: white;
 }
+
+.game-image{
+  display: flex;
+
+  border: 10px solid aliceblue;
+  width: 1250px;
+  height: 400px;
+
+}
