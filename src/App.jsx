@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Client, { BASE_URL } from './services/api'
 
+
 import SignIn from './components/SignIn'
 import Home from './components/Home'
 import About from './components/About'
@@ -26,6 +27,7 @@ const App = () => {
   return (
     <>
     <div>
+
       <Header />
 
     <main>
