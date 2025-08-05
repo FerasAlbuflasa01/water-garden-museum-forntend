@@ -32,6 +32,8 @@ const App = () => {
       <Route path='/new/games' element={<New />} />
     </Routes>
 
+    
+
   )
 }
 
