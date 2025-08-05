@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { NewGame } from '../services/NewGame'
 
 const New = () => {
-  const initialState = { name: '', price: '', image: '', description: '' }
+  const initialState = { name: '', price: '', img: '', discreption: '' }
 
   let navigate = useNavigate()
 
@@ -14,6 +15,8 @@ const New = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const payload = await NewGame(creatGame)
+    console.log(payload)
     setCrreatGame(initialState)
     navigate('/')
   }
@@ -26,27 +29,31 @@ const New = () => {
           type="text"
           name={'name'}
           placeholder={'name'}
+          value={creatGame.name}
           onChange={handleChange}
         />
         <input
           type="text"
           name={'price'}
           placeholder={'price'}
+          value={creatGame.price}
           onChange={handleChange}
         />
         <input
           type="text"
           name={'img'}
           placeholder={'image'}
+          value={creatGame.img}
           onChange={handleChange}
         />
         <input
           type="text-area"
-          name={'description'}
-          placeholder={'description'}
+          name={'discreption'}
+          placeholder={'discreption'}
+          value={creatGame.discreption}
           onChange={handleChange}
         />
-        <button name='submit'>Submit</button>
+        <button type='submit'>Submit</button>
       </form>
     </div>
   )

@@ -14,7 +14,7 @@ const App = () => {
   const checkToken = async () => {
     const token = localStorage.getItem('token')
     if (token) {
-      let admin = Client.get(`${BASE_URL}/auth/session`)
+      let admin = Client.get(`http://localhost:3001/auth/session`)
       setAdmin(admin)
     }
   }
@@ -29,7 +29,7 @@ const App = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/view/games" element={<ViewGames />} />
-      <Route path="/new/games" element={<New />} />
+      <Route path="/game/new" element={<New />} />
 
     </Routes>
 
