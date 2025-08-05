@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react"
 import GameCard from "./GameCard"
 import ViewDetails from "./ViewDetails"
+import axios from "axios"
 
 const Home = () => {
     const [listOfGames, setListOfGames] = useState([])
@@ -9,9 +10,7 @@ const Home = () => {
 
     useEffect(() => {
         const getGameDetails = async () => {
-            const response = await axios.get(
-                `http://localhost:3001/games`
-            )
+            const response = await axios.get(`http://localhost:3001/games`)
             setListOfGames(response.data)
             console.log(response.data)
         }
@@ -22,11 +21,11 @@ const Home = () => {
     return (
         <>
         {listOfGames.map((game) => (
-        <GameCard game={game}/>
+        <GameCard game={game} key={game._id}/>
         ))}
-        {listOfGames.map((game) => (
+        {/* {listOfGames.map((game) => (
         <ViewDetails game={game}/>
-        ))}
+        ))} */}
 
         
         </>
