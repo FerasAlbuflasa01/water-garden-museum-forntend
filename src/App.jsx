@@ -4,7 +4,7 @@ import {Routes, Route} from 'react-router-dom'
 import SignIn from './components/SignIn'
 import Home from './components/Home'
 import About from './components/About'
-import ViewGames from './components/ViewGames'
+import ViewGames from './components/ViewDetails'
 import New from './components/New'
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
       <Route path='/sign-in' element={<SignIn />} />
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<About />} />
-      <Route path='/view/games' element={<ViewGames />} />
+      <Route path='/view/games' element={<ViewDetails />} />
       <Route path='/new/games' element={<New />} />
     </Routes>
   )
