@@ -6,11 +6,11 @@
 }
 
 header {
-  background-color: #ffffff;
+  height: 10vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  height: 3em;
+  background-color: var(--primary-bg);
 }
 
 .sign-in {
@@ -24,13 +24,12 @@ header {
   border-radius: 10%;
 }
 
-.game-image{
+.game-image {
   display: flex;
 
   border: 10px solid aliceblue;
   width: 1250px;
   height: 400px;
-
 }
 .game-image2 {
   display: flex;
@@ -38,4 +37,9 @@ header {
   height: 400px;
   width: 100%;
   border-radius: 10%;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

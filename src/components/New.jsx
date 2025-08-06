@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { NewGame } from '../services/NewGame'
 
-const New = () => {
+const New = ({ admin }) => {
   const initialState = { name: '', price: '', img: '', discreption: '' }
 
   let navigate = useNavigate()
@@ -20,8 +20,8 @@ const New = () => {
     setCrreatGame(initialState)
     navigate('/')
   }
-  const token = localStorage.getItem('token')
-  if (token) {
+
+  if (admin) {
     return (
       <div>
         <h1>Add A New Game Listing</h1>

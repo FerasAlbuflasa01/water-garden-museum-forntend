@@ -1,26 +1,40 @@
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-
-const ViewDetails = () => {
-    const [viewDetails, setViewDetails] = useState({})
-    let { gameId } = useParams()
-
-    useEffect(() => {
-        const getGameDetails = async () => {
-            const response = await axios.get(
-                // `${BASE_URL}/${gameId}?key=${API_KEY}`
-                )
-        }
-    })
-
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import Client, { BASE_URL } from '../services/api'
+const ViewDetails = ({ game, admin }) => {
+  console.log(admin)
+  let navigate = useNavigate()
+  const [gameDetails, setGameDetails] = useState({})
+  const { gameId } = useParams()
+  useEffect(() => {
+    const getGameDetails = async () => {
+      const response = await axios.get(`${BASE_URL}/games/${gameId}`)
+      console.log('here ' + response)
+      setGameDetails(response.data)
+    }
+    getGameDetails()
+  }, [])
+  const handelClick = async () => {
+    let response = await Client.delete(`${BASE_URL}/games/${gameDetails._id}`)
+    navigate('/')
+  }
+  if (gameDetails) {
     return (
-        <form className="details" >
-            <img src="https://media.alwasatnews.com/data/2016/5096/images/loc-8.jpg" alt="game.image" className="game-image" />
-             {/* image is an example */}
-            <h2 name={'game.name'}>Name</h2>
-            <h3 name={'game.price'}>Price</h3>
-            <p name={'game.discreption'}>Discreption</p>
-        </form>
+      <div className="details">
+        <img
+          src={gameDetails.img}
+          alt={gameDetails.name}
+          className="game-image"
+        />
+        <h2 name={'game.name'}>{gameDetails.name}</h2>
+        <h3 name={'game.price'}>{gameDetails.price}</h3>
+        <p name={'game.discreption'}>{gameDetails.discription}</p>
+        {admin ? <button onClick={handelClick}>delete</button> : null}
+      </div>
     )
+  } else {
+    return <div>Loading...</div>
+  }
 }
 export default ViewDetails
