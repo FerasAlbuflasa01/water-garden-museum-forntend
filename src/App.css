@@ -1,45 +1,303 @@
-#root {
-  max-width: 1280px;
+/* General Reset and Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Game List Container */
+.list-games {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+}
+
+/* Game Card Styling */
+.game-card {
+  width: 260px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Game Card Image */
+.game-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Game Name */
+.game-card h2 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+/* Info Button */
+.game-card button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.game-card button:hover {
+  background-color: #0056b3;
+}
+
+/* Add Game Form */
+.add-game {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 40px auto;
+  gap: 15px;
+}
+
+.add-game input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.add-game button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-game button:hover {
+  background-color: #218838;
+}
+
+/* ============================= */
+/* 🌟 NAVIGATION BAR STYLING    */
+/* ============================= */
+/* 
+header {
+  background-color: #1e1e1e;
+  padding: 15px 30px;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  gap: 30px; 
+  padding: 0 20px;
+  
+}
+
+nav h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #f0b90b;
+}
+
+nav .nav-links {
+  display: flex;
+  align-items: center;
+} */
+
+header {
+  background-color: #1e1e1e;
+  padding: 15px 0;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly; /* Center horizontally */
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px; /* Space between links */
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #f0b90b;
+}
+.logout-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+  background-color: #c62828;
+}
+
+.details {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-header {
-  height: 10vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--primary-bg);
+.details img.game-image {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.details h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.details h3 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.details p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.details button {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.details button:hover {
+  background-color: #c62828;
 }
 
 .sign-in {
-  color: white;
+  max-width: 400px;
+  margin: 60px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.game-card {
-  border: 5px solid aliceblue;
-  height: 650px;
-  width: 350px;
-  border-radius: 10%;
+.sign-in h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.game-image {
-  display: flex;
-
-  border: 10px solid aliceblue;
-  width: 1250px;
-  height: 400px;
+.sign-in label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
-.game-image2 {
-  display: flex;
-  border: 2px solid aliceblue;
-  height: 400px;
+
+.sign-in input {
   width: 100%;
-  border-radius: 10%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+
+.sign-in button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.sign-in button:hover {
+  background-color: #218838;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 3rem;
+}
+
+.text-area {
+  width: 100;
+  height: 100px;
+  word-break: break-word;
+}
+
+.about-page {
+  max-width: 800px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-page h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-page p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
 }

@@ -29,7 +29,7 @@ const ViewDetails = ({ game, admin }) => {
         />
         <h2 name={'game.name'}>{gameDetails.name}</h2>
         <h3 name={'game.price'}>{gameDetails.price}</h3>
-        <p name={'game.discreption'}>{gameDetails.discription}</p>
+        <p name={'game.discreption'}>{gameDetails.discreption}</p>
         {admin ? <button onClick={handelClick}>delete</button> : null}
       </div>
     )

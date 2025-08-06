@@ -4,7 +4,7 @@ const Header = ({ admin, handleLogOut }) => {
   return (
     <header>
       {admin ? (
-        <nav>
+        <nav className='nav-links'>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/games/new">Add Item</NavLink>
@@ -13,7 +13,7 @@ const Header = ({ admin, handleLogOut }) => {
           </Link>
         </nav>
       ) : (
-        <nav>
+        <nav className='nav-links'>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
         </nav>
