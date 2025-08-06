@@ -23,7 +23,8 @@ const New = ({ admin }) => {
 
   if (admin) {
     return (
-      <div>
+      <div className='new-game-page'>
+      <div className='new-game' >
         <h1>Add A New Game Listing</h1>
         <form className="add-game" onSubmit={handleSubmit}>
           <input
@@ -59,6 +60,7 @@ const New = ({ admin }) => {
           ></textarea>
           <button type="submit">Submit</button>
         </form>
+      </div>
       </div>
     )
   } else {

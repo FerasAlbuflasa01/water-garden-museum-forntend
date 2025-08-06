@@ -43,7 +43,7 @@ const SignIn = ({ setAdmin }) => {
       <br />
       <label htmlFor="password">Password: </label>
       <input
-        type="text"
+        type="password"
         name="password"
         placeholder="Enter your password"
         value={password}
