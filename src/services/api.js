@@ -9,6 +9,7 @@ Client.interceptors.request.use(
     // Reads the token in localStorage
     const token = localStorage.getItem('token')
     // if the token exists, we set the authorization header
+    console.log('cline=' + token)
     if (token) {
       config.headers['authorization'] = `Bearer ${token}`
     }
@@ -22,4 +23,3 @@ Client.interceptors.request.use(
   }
 )
 export default Client
-

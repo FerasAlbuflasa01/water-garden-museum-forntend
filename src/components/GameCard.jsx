@@ -4,7 +4,6 @@ const GameCard = ({ game }) => {
     <>
       <div className="game-card">
         <img src={game.img} alt={game.name} />
-        {/* image is an example */}
         <h2>{game.name}</h2>
         <br />
         <Link to={`/games/${game._id}`}>

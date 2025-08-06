@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { NewGame } from '../services/NewGame'
 
-const New = () => {
+const New = ({ admin }) => {
   const initialState = { name: '', price: '', img: '', discreption: '' }
 
   let navigate = useNavigate()
@@ -21,41 +21,49 @@ const New = () => {
     navigate('/')
   }
 
-  return (
-    <div>
-      <h1>Add A New Game Listing</h1>
-      <form className="add-game" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name={'name'}
-          placeholder={'name'}
-          value={creatGame.name}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name={'price'}
-          placeholder={'price'}
-          value={creatGame.price}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name={'img'}
-          placeholder={'image'}
-          value={creatGame.img}
-          onChange={handleChange}
-        />
-        <input
-          type="text-area"
-          name={'discreption'}
-          placeholder={'discreption'}
-          value={creatGame.discreption}
-          onChange={handleChange}
-        />
-        <button type='submit'>Submit</button>
-      </form>
-    </div>
-  )
+  if (admin) {
+    return (
+      <div>
+        <h1>Add A New Game Listing</h1>
+        <form className="add-game" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name={'name'}
+            placeholder={'name'}
+            value={creatGame.name}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name={'price'}
+            placeholder={'price'}
+            value={creatGame.price}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name={'img'}
+            placeholder={'image'}
+            value={creatGame.img}
+            onChange={handleChange}
+          />
+          <input
+            type="text-area"
+            name={'discreption'}
+            placeholder={'discreption'}
+            value={creatGame.discreption}
+            onChange={handleChange}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    )
+  } else {
+    return (
+      <>
+        <h3>unathorized</h3>
+      </>
+    )
+  }
 }
 export default New

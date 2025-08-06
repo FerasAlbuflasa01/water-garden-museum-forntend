@@ -1,35 +1,29 @@
-
-import { useEffect, useState } from "react"
-import GameCard from "./GameCard"
-import ViewDetails from "./ViewDetails"
-import axios from "axios"
+import { useEffect, useState } from 'react'
+import GameCard from './GameCard'
+import ViewDetails from './ViewDetails'
+import axios from 'axios'
+import { BASE_URL } from '../services/api'
 
 const Home = () => {
-    const [listOfGames, setListOfGames] = useState([])
-    // let { gameId } = useParams()
+  const [listOfGames, setListOfGames] = useState([])
 
-    useEffect(() => {
-        const getGameDetails = async () => {
-            const response = await axios.get(`http://localhost:3001/games`)
-            setListOfGames(response.data)
-            console.log(response.data)
-        }
-        getGameDetails()
+  useEffect(() => {
+    const getGameDetails = async () => {
+      const response = await axios.get(`${BASE_URL}/games`)
+      setListOfGames(response.data)
+      console.log(response.data)
+    }
+    getGameDetails()
+  }, [])
 
-    },[])
-
-    return (
-        <>
+  return (
+    <>
+      <div className="list-games">
         {listOfGames.map((game) => (
-        <GameCard game={game} key={game._id}/>
+          <GameCard game={game} key={game._id} />
         ))}
-        {/* {listOfGames.map((game) => (
-        <ViewDetails game={game}/>
-        ))} */}
-
-        
-        </>
-    )
+      </div>
+    </>
+  )
 }
 export default Home
-
