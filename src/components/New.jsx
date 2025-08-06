@@ -47,13 +47,16 @@ const New = ({ admin }) => {
             value={creatGame.img}
             onChange={handleChange}
           />
-          <input
-            type="text-area"
+          <textarea
             name={'discreption'}
             placeholder={'discreption'}
             value={creatGame.discreption}
             onChange={handleChange}
-          />
+            className="text-area"
+            cols="30"
+            rows="10"
+            autoComplete="off"
+          ></textarea>
           <button type="submit">Submit</button>
         </form>
       </div>
