@@ -29,6 +29,7 @@ const App = () => {
   }
   return (
     <>
+    <title>AL-Ma'aeeya Park - Bahrain</title>
       <header>
         <Header handleLogOut={handleLogOut} admin={admin} />
       </header>

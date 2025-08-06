@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <>
-    <title>AL-Ma'aeeya Park - Bahrain</title>
+    
       <div className="list-games">
         {listOfGames.map((game) => (
           <GameCard game={game} key={game._id} />
